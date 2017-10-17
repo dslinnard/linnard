@@ -1,0 +1,28 @@
+{% if portal.has_solutions %}
+      <div class="min-height-on-desktop article-list">
+          <div class="list-all show-in-mobile">
+          {{ 'View all articles' | link_to: portal.solutions_home_url }}
+          </div>
+        <h4 class="list-head">Popular articles</h4>
+        <div class="list-all for-not-mobile">
+          {{ 'View all articles' | link_to: portal.solutions_home_url }}
+        </div>
+        {% if portal.recent_articles.size > 0 %}
+          <!--<div class="list-lead">{% translate portal.recent_articles %}</div>-->
+          <ul class="list-content">
+            {% for article in portal.recent_articles limit:10 %}
+              <li>
+                <div class="ellipsis">
+                 <a href="{{article.url}}">{{article.title | h}}</a>
+                </div>
+                {% if article.body_plain != blank %}  
+                  <p class="article-excerpt">
+                      {{ article.body_plain | h || truncate:80 }}
+                  </p>
+                {% endif %}
+              </li>
+            {% endfor %}
+           </ul>
+        {% endif %}
+      </div>
+  {% endif %}

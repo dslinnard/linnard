@@ -1,0 +1,20 @@
+body
+{
+	margin: 10px 0px;
+	font-size: 95%;
+}
+
+#top_right
+{
+	visibility:hidden;
+}
+
+#top_left
+{
+	visibility:hidden;
+}
+
+h2
+{
+	margin-top:50px;
+}

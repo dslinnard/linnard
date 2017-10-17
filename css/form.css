@@ -1,0 +1,38 @@
+form fieldset {
+  border: 1px solid #444444;
+  display: inline-block;
+  margin: 0 0 2em 0;
+  padding: 0 1em 1em 1em;
+  border: 1px solid #3A3A3A;
+}
+form fieldset legend {
+  font-weight: bold;
+  color: #A4A4A4;
+  border-bottom: none;
+}
+form fieldset.radio {
+  margin: 1em 0 2em 0;
+}
+form fieldset.radio input {
+  clear: both;
+  float: left;
+  width: auto;
+}
+form fieldset.radio label {
+  font-weight: normal;
+}
+form input {
+  display: block;
+}
+form input.reset {
+  float: left;
+}
+form label {
+  margin: 1em 1em 0 0;
+  color: #101010;
+}
+form .error {
+  color: red;
+  font-weight: bold;
+  margin-left: 20px;
+}

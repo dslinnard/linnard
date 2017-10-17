@@ -1,0 +1,126 @@
+<div class="page page-layout">
+  {{ header }}
+  
+  <!-- Search and page links for the page -->
+  {% if portal.current_tab %}
+  <section class="help-center rounded-6"> 
+    <div class="hc-search">
+      <div class="hc-search-c">
+        {% snippet search_form %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</div>
+
+<!-- Quick links -->
+{% if portal.current_tab == "home" %}
+
+<section class="intro_cards">
+  <div class="intro_cards_container">
+    <a href="/support/solutions/17000001369" title="Sharing Websites">
+      <div class="intro_card_container">
+        <div class="card align_center">
+          <div class="card_image card_image_left">
+          </div>
+          <h2 class="card_title">Sharing Websites</h2>
+          <p class="card_description">Find the answer to your questions about the AnyShare Sharing Websites product!</p>
+          <p class="btn">Browse all articles</p>
+        </div> <!-- card -->
+      </div> <!-- intro_card_container -->
+    </a>
+
+    <a href="/support/solutions/17000001928" title="AnyShare Society">
+      <div class="intro_card_container">
+        <div class="card align_center">
+          <div class="card_image card_image_right">
+          </div>
+          <h2 class="card_title">AnyShare Society</h2>
+          <p class="card_description">Learn more about about our AnyShare the business. We're a Cooperative as well!</p>
+          <p class="btn">Browse all articles</p>
+        </div> <!-- card -->
+      </div> <!-- intro_card_container -->
+    </a>
+  </div> <!-- intro_cards_container -->
+</section>
+
+{% endif %}
+
+<!-- Notifocation Messages for the page  -->
+{{ page_message }}
+
+<div class="c-wrapper">   
+  {{ content_for_layout }}
+</div>
+
+{{ footer }}
+
+<script type="text/javascript">
+  jQuery('.hc-search-input').prepend('<i class="icon-search"></i>');
+</script>
+
+{% if portal.current_page == 'profile_edit' %}
+<style>
+  .sidebar{
+    padding-left: 2em;
+  }
+  .form-portal{
+    border-right: 1px solid #dbdbdb;
+  }
+  .rounded-6{
+    @include border-radius(none);
+  }
+</style>
+{% endif %}
+
+{% if portal.current_page == 'ticket_view' %}
+<style>
+  .main{
+    padding-right: 2em;
+  }
+  .sidebar{
+    border-left: 1px solid #dbdbdb;
+    padding-left: 2em;
+  }
+  .rounded-6{
+    @include border-radius(none);
+  }
+</style>
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    jQuery('.breadcrumb').removeClass('breadcrumb').addClass('breadcrumbs');
+  })
+</script>
+{% endif %}
+
+<!-- Navbar Fixed Code -->
+
+<script type="text/javascript">
+  jQuery(window).scroll(function(e) {
+    var scroller_anchor = jQuery("#sticky_anchor").offset().top;
+    if (jQuery(this).scrollTop() >= scroller_anchor && jQuery('#sticky_head').css('position') != 'fixed') 
+      {   
+        jQuery('#sticky_head').removeClass('navbar-static').addClass('navbar-fixed');
+        var navbar_height = jQuery('#sticky_head').innerHeight();
+        jQuery('#sticky_anchor').css('height', navbar_height + 'px');
+        var sticky_height = jQuery('#sticky_head').height();
+        jQuery('.ui-autocomplete').css({'position': 'fixed', 'top' : sticky_height + 'px'});
+      } 
+    else if (jQuery(this).scrollTop() < scroller_anchor && jQuery('#sticky_head').css('position') != 'relative') 
+      {  
+        jQuery('#sticky_anchor').css('height', '0px');
+        jQuery('#sticky_head').removeClass('navbar-fixed').addClass('navbar-static');
+        var sticky_height = jQuery('#sticky_head').height();
+        var offset = sticky_height + jQuery('#sticky_head').offset().top;
+        jQuery('.ui-autocomplete').css({'position': 'absolute', 'top' : offset + 'px' })
+      }
+  });  
+</script>
+
+<script type="text/javascript">
+  jQuery(window).load(function(){
+    jQuery('.ui-autocomplete-input').attr('placeholder','Search Articles and Community Discussions..');
+    });
+  
+</script>
