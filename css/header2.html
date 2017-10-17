@@ -1,0 +1,72 @@
+<header class="banner header-menu">
+  <div class="banner-wrapper">
+    <div class="nav-wrapper">
+      <a href="#" class="logo"></a>
+      <a data-toggle-dom="#header-tabs" id="menu-icon" href="#" data-animated="true" class="mobile-icon-nav-menu show-in-mobile"></a>
+      <nav class="nav-menu" id="header-tabs">
+        <div id="new-ticket-button" class="show-in-mobile">
+          {% if portal.has_user_signed_in == true %}
+            <a href="{{ portal.new_ticket_url }}">New Support Ticket</a>
+            <a href="{{ portal.profile_url }}">Edit Profile</a>
+            <a href="{{ portal.logout_url }}">Sign Out</a>
+          {% else %}
+            <a href="{{ portal.login_url }}">Login</a>
+            <a href="{{ portal.new_ticket_url }}">New Support Ticket</a>
+          {% endif %}
+        </div>
+      </div>
+        <div id="new-ticket-button" class="for-not-mobile">
+          {% if portal.has_user_signed_in == true %}
+            {% if portal.user.profile_url != false %}   
+              <img class="profile-picture" src="{{ portal.user.profile_url }}" />
+            {% else %}
+            <img class="profile-picture" src="/images/fillers/profile_blank_thumb.gif" />
+          {% endif %}
+            <div class="dropdown" id="action-bar-toggle">
+                <a class="dropdown-toggle profile-name" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">{{ current_user.name }}<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <a href="{{ portal.profile_url }}">Edit Profile</a>
+                  <a href="{{ portal.logout_url }}">Sign Out</a>
+                </ul>
+            </div>
+            <a href="{{ portal.new_ticket_url }}" class="btn-medium">New Support Ticket</a>
+            {% else %}
+            <a href="{{ portal.login_url }}">Login</a>
+            <a href="{{ portal.new_ticket_url }}" class="btn-medium">New Support Ticket</a>
+          {% endif %}
+        </div>
+      </div>
+              
+        </nav>
+
+    </div>
+  </div>
+</header>
+{% if portal.current_tab == "home" %}
+  <div class="portal-banner">
+      <h1> Hi. We're here to help! </h1>
+      <p> Go ahead, ask us anything. </p>
+  </div>
+{% endif %}
+ <div id="sticky_anchor"></div>
+ <div id="sticky_head">
+    <nav class="page-tabs action-bar" >
+      {% if portal.tabs.size > 0 %}
+      <a href="/support/home" class="help-center-tab show-in-mobile">Support Home</a>
+      <a data-toggle-dom="#page-tabs" id="menu-icon" href="#" data-animated="true" class="mobile-icon-nav-menu show-in-mobile"></a>
+      <div class="action-bar-wrapper">  
+      <div class="nav-link" id="page-tabs">
+          {% for tab in portal.tabs %}
+            {% if tab.url %}
+              <a class="{% if tab.tab_type == portal.current_tab %}active{% endif %}" href="{{tab.url}}">
+                {% if tab.label == 'Home' %}
+                <i class="icon-home for-not-mobile"></i>{{ "Support Home" }} 
+                {% else %} 
+                  {{ tab.label }} 
+                {% endif %}
+              </a>
+            {% endif %}
+          {% endfor %}
+         
+      {% endif %}
+    </nav>

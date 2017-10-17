@@ -1,0 +1,373 @@
+@charset "UTF-8";
+
+@import 'bootstrap.scss';
+
+
+.intro_card_container {
+  width: 400px;
+  height: 400px;
+  background: #F4F7FA;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.intro_card_container:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
+}
+
+p, blockquote {
+    color: #444444;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 150%;
+    margin-left: 10px;
+}
+
+.subSection {
+  margin-left: 20px;
+}
+
+.equ {
+  font-family: "Courier New", Courier, monospace;
+}
+
+#menu ul li a {
+    border: medium none;
+    padding: 0.3em 1.5em 0.3em 1em;
+    text-decoration: none;
+}
+
+input.value {
+    color:white;
+}
+
+.button_add {
+    background-image: url(/images/icon_search.png); /* 16px x 16px */
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    padding-left: 16px;     /* make text start to the right of the image */
+    vertical-align: middle; /* align the text vertically centered */
+}
+
+.button_add:focus {
+  outline-style: solid;
+  outline-color: gray;   
+  outline-width: thin;
+  outline-style: inset;
+}
+
+.imageInputWrapper{ width:200px; border:solid 1px #000;  }
+#sampleForm input.inputWithImge { width:175px; border:none; margin-right:5px;}
+
+@font-face {
+    font-family: sf_quartzite;
+    src:  url('/fonts/sf_quartzite/SF_quartzite_bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: sf_quartzite;
+    src:  url('/fonts/sf_quartzite/SF_quartzite_bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: sf_quartzite_ext;
+    src: url('/fonts/sf_quartzite/SF_Quartzite_Extended.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.navbar {
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+#navigation
+{
+    font-family: Arial,Helvetica,sans-serif;
+    margin-bottom:4ex;
+}
+
+.logo 
+{   
+    a {
+        font-size:60px!important;
+        color:#808080!important;
+        font-family:sf_quartzite;
+        text-decoration:none;
+    }
+}
+
+
+ol, ul {
+  &.pageIndex {
+    list-style: none outside none;
+    li:before {
+      content: "\00a7";
+    }
+  }
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.offScreen {
+    position: absolute;
+    left: -999em;
+}
+
+#wrapper {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: auto !important;
+    margin: 0 auto;
+    min-height: 100%;
+    padding: 4px 30px;
+    position: relative;
+    width: 920px;
+}
+
+input#q
+{
+    border: 1px solid #A4A4A4;
+}
+    
+#header
+{
+    height:10ex;
+}
+
+#header .nav {
+    width:100%;
+    ul .search {
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+}
+
+
+#header .toolbar {
+    color: #A3A3A3;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #555;
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: normal;
+  font-family:sf_quartzite_ext;
+  margin-bottom:30px;
+  margin-top:5px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 36px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  i.fa {
+    font-size: 14px;
+    margin-left: 5px;
+    height: 16px;
+    vertical-align: middle;
+  }
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 20px;
+  line-height: 26px;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 24px;
+}
+h5 {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 22px;
+}
+
+a {
+  color: blue;
+  font-weight: 800;
+  &:link, &:visited, &:hover, &:focus
+  {
+    color: DarkBlue ;
+  }
+}
+
+html, body {
+    background-color: #FFFFFF;
+    color: #000000;
+     font-family: Arial,Helvetica,sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size:13px;
+}
+
+#footer {
+    bottom: 0;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    text-align:center;
+}
+
+#footer p {
+    color: #B3B1B1;
+}
+
+#cse-search-box {
+    color: #979494;
+    font-size: 13px;
+    height: 18px;
+    outline: medium none;
+    position: relative;
+    z-index: 2;
+}
+
+#cse-search-box input#image_button
+{
+    border: 0 none;
+    position: relative;
+    right: 27px;
+    top: -3px;
+    vertical-align: middle;
+    z-index: 999;
+}
+
+#cse-search-box label
+{
+    color:#FFF;
+}
+
+#footer p.copyright-line 
+{
+    font-size: 10px;
+    //margin-top: -50px;
+}
+
+.clearer {
+    clear: both;
+    height: 0px;
+    display:none;
+}
+
+.ghi {
+    display: none !important;
+}
+
+ul.bxslider {
+    list-style:none!important;
+}
+
+.bx-wrapper {
+    margin-top:35px;
+    .bx-viewport {
+        margin-top:-5px!important;
+    }
+    .bx-caption {
+        background: none repeat scroll 0 0 rgba(80, 80, 80, 0.3)!important;
+        margin-left:-5px!important;
+        margin-bottom:5px!important;
+    }
+}
+
+
+.tm {
+    color:#000; 
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:smaller;
+    vertical-align:top;
+}
+
+blockquote {
+    quotes:none;
+    font-style:italic;
+    width:90%;
+    margin:inherit 0;
+}
+
+#breadcrumbs {
+    font-size: 90%;
+    line-height: 125%;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
+    width: 85%;
+}
+
+.sets {
+    margin-bottom: 5ex;
+    overflow: hidden;
+}
+
+.sets ul li {
+    float: left;
+    width: 9em;
+}
+
+#notes {
+  img {
+    display: block;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid lightGray;
+  }
+}
+
+// Create spacing classes
+@mixin create_spacing_classes($start, $stop, $inc)
+{
+  $dirs:'top', 'right', 'bottom', 'left';
+  $types:'margin', 'padding';
+
+  @for $i from $start through $stop {
+    @each $type in $types {
+      @each $dir in $dirs {
+        .#{nth($type,1)}-#{nth($dir,1)}-#{$i*$inc}{
+          #{nth($type,1)}-#{nth($dir,1)}:#{$i*$inc}px!important;
+        }
+      }
+      .#{nth($type,1)}-x-#{$i*$inc} {
+        #{nth($type,1)}-left:#{$i*$inc}px!important;
+        #{nth($type,1)}-right:#{$i*$inc}px!important;
+      }
+      .#{nth($type,1)}-y-#{$i*$inc } {
+        #{nth($type,1)}-top:#{$i*$inc}px;
+        #{nth($type,1)}-bottom:#{$i*$inc}px!important;
+      }
+      .#{nth($type,1)}-all-#{$i*$inc} {
+        #{nth($type,1)}:#{$i*$inc}px!important;
+      }
+    }
+  }
+}
+
+// fine spacing. margin-right-1, margin-left-2, margin-bottom-3, margin-top-4 etc
+@include create_spacing_classes(0, 10, 1);
+
+// coarse spacing. margin-top-0, margin-right-5, margin-left-15, margin-bottom-20, margin-top-25, margin-top-30, padding-top-0 etc
+@include create_spacing_classes(0, 11, 5);
